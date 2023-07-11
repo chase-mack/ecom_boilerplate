@@ -26,8 +26,8 @@ export default function Cart() {
   };
 
   return (
-    <div>
-      {items ? (
+    <section className={styles.cartSection}>
+      {items.length > 0 ? (
         items.map((item) => (
           <div key={item.id}>
             <p className={styles.itemTitle}>{item.title}</p>
@@ -37,6 +37,6 @@ export default function Cart() {
       ) : (
         <h3>Nothing to see here.</h3>
       )}
-    </div>
+    </section>
   );
 }

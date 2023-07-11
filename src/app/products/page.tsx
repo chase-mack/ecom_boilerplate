@@ -1,4 +1,4 @@
-import styles from "./layout.module.css";
+import styles from "./page.module.css";
 import ProductSection from "./products";
 
 export const metadata = {
@@ -9,7 +9,9 @@ export const metadata = {
 export default async function ProductsPage() {
   const products = await getProductsData();
   return (
-    <main>{products ? <ProductSection products={products} /> : null}</main>
+    <main className={styles.main}>
+      {products ? <ProductSection products={products} /> : null}
+    </main>
   );
 }
 

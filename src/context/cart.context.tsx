@@ -34,7 +34,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
-    const storedCartItems = localStorage.getItem("cartItems");
+    const storedCartItems = sessionStorage.getItem("cartItems");
     if (storedCartItems) {
       setCartItems(JSON.parse(storedCartItems));
     }
@@ -43,7 +43,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addToCart = (item: CartItem) => {
     setCartItems((prevItems) => {
       const updatedItems = [...prevItems, item];
-      localStorage.setItem("cartItems", JSON.stringify(updatedItems));
+      sessionStorage.setItem("cartItems", JSON.stringify(updatedItems));
       return updatedItems;
     });
   };
@@ -51,7 +51,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const removeFromCart = (itemId: number) => {
     setCartItems((prevItems) => {
       const updatedItems = prevItems.filter((item) => item.id !== itemId);
-      localStorage.setItem("cartItems", JSON.stringify(updatedItems));
+      sessionStorage.setItem("cartItems", JSON.stringify(updatedItems));
       return updatedItems;
     });
   };

@@ -1,7 +1,7 @@
 import { CartItem } from "@/context/cart.context";
 
-export const getCartItemsFromLocalStorage = (): CartItem[] => {
-  const storedCartItems = localStorage.getItem("cartItems");
+export const getCartItemsFromSessionStorage = (): CartItem[] => {
+  const storedCartItems = sessionStorage.getItem("cartItems");
   if (storedCartItems) {
     return JSON.parse(storedCartItems);
   }

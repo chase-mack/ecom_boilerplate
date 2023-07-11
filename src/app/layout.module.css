@@ -1,3 +1,8 @@
 .main {
   background-color: var(--secondary-color);
 }
+
+.heading {
+  margin: auto;
+  text-align: center;
+}

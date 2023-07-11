@@ -1,3 +1,11 @@
+.cartSection {
+  padding: 0 10px;
+}
+
+.cartSection h3 {
+  text-align: center;
+}
+
 .itemTitle {
   display: inline-block;
   padding-right: 10px;

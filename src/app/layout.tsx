@@ -3,6 +3,7 @@ import "./globals.css";
 import styles from "@/app/layout.module.css";
 import Header from "./common/header/header";
 import Footer from "./common/footer/footer";
+import { GlobalProvider } from "./GlobalProvider";
 
 export const metadata = {
   title: "ECom Boilerplate",
@@ -20,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <GlobalProvider>
+          <Header />
+          {children}
+          <Footer />
+        </GlobalProvider>
       </body>
     </html>
   );

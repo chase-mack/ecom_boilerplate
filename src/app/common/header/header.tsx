@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import styles from "./header.module.css";
+import CartItems from "./itemsInCart";
 import Menu from "@/app/common/header/menu";
 
 export default function Header() {
@@ -38,8 +40,9 @@ export default function Header() {
             <Link href="/products">Products</Link>
           </li>
           <li>
-            <Link href="/cart">Cart</Link>
+            <Link href="/login">Login</Link>
           </li>
+          <CartItems />
         </ul>
       </div>
       <Menu />

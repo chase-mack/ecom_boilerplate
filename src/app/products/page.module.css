@@ -17,6 +17,23 @@
   border-radius: var(--rounded);
 }
 
+.searchBar,
+.searchButton {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--rounded);
+  padding: 2px;
+}
+
+.searchBar {
+  padding-left: 3px;
+  margin-right: 3px;
+}
+
+.searchButton {
+  font-weight: bold;
+}
+
 .productSection {
   display: flex;
   flex-direction: row;

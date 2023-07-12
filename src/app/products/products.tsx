@@ -24,19 +24,27 @@ export default function ProductSection(props: any) {
   const [products, setProducts] = useState(props.products);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(6);
-
-  console.log(category);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isSearchTriggered, setIsSearchTriggered] = useState(false);
 
   useEffect(() => {
     setProducts(props.products);
   }, [props.products]);
 
-  const selectedProducts =
-    category === "all"
-      ? products
-      : products.filter((product: IProduct) => {
-          return product.category === category;
-        });
+  useEffect(() => {
+    if (isSearchTriggered) {
+      setCurrentPage(1);
+      setIsSearchTriggered(false);
+    }
+  }, [isSearchTriggered]);
+
+  const selectedProducts = products.filter((product: IProduct) => {
+    const isCategoryMatch = category === "all" || product.category === category;
+    const isSearchMatch = searchQuery
+      ? product.title.toLowerCase().includes(searchQuery.toLowerCase())
+      : true;
+    return isCategoryMatch && isSearchMatch;
+  });
 
   // Pagination
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -60,6 +68,20 @@ export default function ProductSection(props: any) {
     setCurrentPage(1);
   };
 
+  const handleSearch = () => {
+    setIsSearchTriggered(true);
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.currentTarget.value);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter" && searchQuery) {
+      handleSearch();
+    }
+  };
+
   return (
     <>
       <div className={styles.productNav}>
@@ -73,7 +95,7 @@ export default function ProductSection(props: any) {
           </option>
           <option value="all">All Items</option>
           <option value="electronics">Electronics</option>
-          <option value="jewelry">Jewelry</option>
+          <option value="jewelery">Jewelery</option>
           <option value="men's clothing">Men's Clothing</option>
           <option value="women's clothing">Women's Clothing</option>
         </select>
@@ -89,6 +111,17 @@ export default function ProductSection(props: any) {
           <option value={6}>6 Products per Page</option>
           <option value={9}>9 Products per Page</option>
         </select>
+        <input
+          id="search"
+          type="text"
+          className={styles.searchBar}
+          value={searchQuery}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
+        />
+        <button className={styles.searchButton} onClick={handleSearch}>
+          Search
+        </button>
       </div>
       <section className={styles.productSection}>
         {currentProducts.map((product: IProduct) => {

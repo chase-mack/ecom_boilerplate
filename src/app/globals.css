@@ -1,8 +1,8 @@
 :root {
   --primary-color: #1c2c85;
-  --secondary-color: #00ffff;
-  --tertiary-color: #000;
-  --text-light: #fff;
+  --secondary-color: #857f74;
+  --tertiary-color: #191716;
+  --text-light: #f3f5f8;
   --rounded: 5px;
 }
 
@@ -16,4 +16,8 @@ body {
 
 main {
   min-height: 80vh;
+}
+
+::placeholder {
+  color: var(--tertiary-color);
 }

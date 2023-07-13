@@ -33,6 +33,6 @@
 }
 
 .productCard p {
-  color: black;
+  color: var(--tertiary-color);
   font-weight: 600;
 }

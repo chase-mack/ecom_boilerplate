@@ -24,7 +24,8 @@
 
 .addToCart {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--text-light);
+  border-radius: var(--rounded);
   width: 200px;
   height: 30px;
   border: none;

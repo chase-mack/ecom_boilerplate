@@ -19,7 +19,7 @@
 .productNav button {
   margin: 0 5px;
   border: 1px solid var(--primary-color);
-  background-color: var(--secondary-color);
+  background-color: var(--text-light);
   font-weight: bold;
   border-radius: var(--rounded);
   height: 2rem;
@@ -56,7 +56,7 @@
 }
 
 .inactive {
-  background-color: var(--secondary-color);
+  background-color: var(--text-light);
 }
 
 @media screen and (max-width: 768px) {

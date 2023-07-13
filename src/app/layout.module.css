@@ -1,5 +1,6 @@
 .main {
-  background-color: var(--secondary-color);
+  background-color: var(--text-light);
+  color: var(--tertiary-color);
   display: flex;
   justify-content: center;
 }

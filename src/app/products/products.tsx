@@ -85,43 +85,47 @@ export default function ProductSection(props: any) {
   return (
     <>
       <div className={styles.productNav}>
-        <select
-          name="category"
-          id="category"
-          onChange={(event) => setCategory(event.currentTarget.value)}
-        >
-          <option defaultValue={"all"} disabled>
-            Category
-          </option>
-          <option value="all">All Items</option>
-          <option value="electronics">Electronics</option>
-          <option value="jewelery">Jewelery</option>
-          <option value="men's clothing">Men's Clothing</option>
-          <option value="women's clothing">Women's Clothing</option>
-        </select>
-
-        {/* Products per page */}
-        <select
-          name="productsPerPage"
-          id="productsPerPage"
-          value={productsPerPage}
-          onChange={handleProductsPerPageChange}
-        >
-          <option value={3}>3 Products per Page</option>
-          <option value={6}>6 Products per Page</option>
-          <option value={9}>9 Products per Page</option>
-        </select>
-        <input
-          id="search"
-          type="text"
-          className={styles.searchBar}
-          value={searchQuery}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-        />
-        <button className={styles.searchButton} onClick={handleSearch}>
-          Search
-        </button>
+        <div className={styles.productNavGroup}>
+          <select
+            name="category"
+            id="category"
+            onChange={(event) => setCategory(event.currentTarget.value)}
+          >
+            <option defaultValue={"all"} disabled>
+              Category
+            </option>
+            <option value="all">All Items</option>
+            <option value="electronics">Electronics</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="men's clothing">Men's Clothing</option>
+            <option value="women's clothing">Women's Clothing</option>
+          </select>
+          {/* Products per page */}
+          <select
+            name="productsPerPage"
+            id="productsPerPage"
+            value={productsPerPage}
+            onChange={handleProductsPerPageChange}
+          >
+            <option value={3}>3 Products per Page</option>
+            <option value={6}>6 Products per Page</option>
+            <option value={9}>9 Products per Page</option>
+          </select>
+        </div>
+        <div className={styles.productNavGroup}>
+          <input
+            id="search"
+            type="text"
+            placeholder="Type here..."
+            className={styles.searchBar}
+            value={searchQuery}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+          />
+          <button className={styles.searchButton} onClick={handleSearch}>
+            Search
+          </button>
+        </div>
       </div>
       <section className={styles.productSection}>
         {currentProducts.map((product: IProduct) => {

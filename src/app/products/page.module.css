@@ -6,28 +6,24 @@
 .productNav {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 1rem;
 }
 
-.productNav select {
+.productNavGroup {
+  margin-bottom: 1rem;
+}
+
+.productNav select,
+.productNav input,
+.productNav button {
   margin: 0 5px;
   border: 1px solid var(--primary-color);
   background-color: var(--secondary-color);
   font-weight: bold;
   border-radius: var(--rounded);
-}
-
-.searchBar,
-.searchButton {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--primary-color);
-  border-radius: var(--rounded);
-  padding: 2px;
-}
-
-.searchBar {
-  padding-left: 3px;
-  margin-right: 3px;
+  height: 2rem;
+  box-sizing: border-box;
 }
 
 .searchButton {
@@ -61,4 +57,34 @@
 
 .inactive {
   background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .productNav {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .productNavGroup {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .productNavGroup input {
+    width: 360px;
+  }
+  .productNavGroup select {
+    width: 209px;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .productNavGroup {
+    flex-direction: column;
+  }
+  .productNavGroup select,
+  .productNavGroup input,
+  .productNavGroup button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

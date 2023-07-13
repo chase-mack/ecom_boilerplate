@@ -36,13 +36,16 @@ export default function Menu() {
         <nav>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="#">Products</a>
+              <a href="/products">Products</a>
             </li>
             <li>
-              <a href="#">Cart</a>
+              <a href="login">Login</a>
+            </li>
+            <li>
+              <a href="/cart">Cart</a>
             </li>
           </ul>
         </nav>

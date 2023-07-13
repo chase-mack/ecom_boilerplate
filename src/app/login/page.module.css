@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 8px 16px 0 #0e0d1033;
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
   min-height: 300px;
   background-color: var(--primary-color);
@@ -21,13 +21,19 @@
   color: var(--text-light);
 }
 
+.formContainer p {
+  align-self: baseline;
+  margin: 0 0 10px;
+  padding: 0 2rem;
+}
+
 .loginForm {
   width: 100%;
-  padding: 1rem;
+  padding: 2rem 0;
 }
 
 .formGroup {
-  padding: 0 10px;
+  padding: 0 2rem;
 }
 
 .loginForm label {
@@ -54,4 +60,13 @@
   background-color: var(--secondary-color);
   font-weight: bold;
   border-radius: var(--rounded);
+}
+
+.signupLink {
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+.signupLink:hover {
+  text-decoration: underline;
 }

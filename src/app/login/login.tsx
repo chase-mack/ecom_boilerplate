@@ -1,6 +1,7 @@
 "use client";
 import styles from "./page.module.css";
 import { useState, ChangeEvent, FormEvent } from "react";
+import Link from "next/link";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -55,6 +56,17 @@ export default function Login() {
             </button>
           </div>
         </form>
+        <p>
+          <Link className={styles.signupLink} href={"#"}>
+            Forgot your passord?
+          </Link>
+        </p>
+        <p>
+          New user?{" "}
+          <Link className={styles.signupLink} href="/signup">
+            Sign up here!
+          </Link>
+        </p>
       </div>
     </div>
   );
